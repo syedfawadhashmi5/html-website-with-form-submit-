@@ -844,6 +844,15 @@
     }
 }
 @media (max-width: 460px) {
+
+    .banner {
+        height: 58vh;
+      }
+
+    .header-socials {
+        top: 28vh;
+      }
+
     .aboutus-sec .heading {
         font-size: 26px;
     }

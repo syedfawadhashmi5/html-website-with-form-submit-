@@ -322,7 +322,7 @@ li.nav-item.num-item img {
 .navbar .dropdown-menu .dropdown-item:hover {
   text-decoration: none;
   background: unset;
-  color: red;
+  color: #ffffff;
 }
 .navbar .dropdown:hover .dropdown-menu {
   display: block;

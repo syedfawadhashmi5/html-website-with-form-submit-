@@ -17,9 +17,8 @@
   <link rel="stylesheet" href="assets/css/m-style.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-
-
-
+      <!-- Include Toastify CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body class="homePg">
@@ -108,7 +107,8 @@
             </a>
             <div class="dropdown-menu">
               <div class="dropdown-section" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item d-hover" href="#">Branding & Logo Designing</a>
+                <a class="dropdown-item d-hover" href="#">Apps Design &
+                  Development</a>
                 <a class="dropdown-item d-hover" href="#">Website Design &
                   Development</a>
                 <a class="dropdown-item d-hover" href="#">Video Animation</a>
@@ -189,7 +189,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
-            <a class="nav-link num" href="tel:+10000000000">(708)248-0832
+            <a class="nav-link num" href="tel:+1(708)248-0832">(708)248-0832
             </a>
           </li>
           <li class="nav-item">
@@ -257,7 +257,7 @@
                   <span class="mask">Get a quote</span>
                 </a>
               </div>
-              <a href="tel:+10000000000" class="btn-number" name="Hover">(708)248-0832
+              <a href="tel:+1(708)248-0832" class="btn-number" name="Hover">(708)248-0832
               </a>
             </div>
           </div>
@@ -327,7 +327,8 @@
           <div class="col-md-8 mx-auto">
             <div id="portfolioSec" class="content mb-2">
               <h3 class="subHeading">PORTFOLIO</h3>
-              <h2 class="heading wow fadeInUp">Mobile Apps </h2>
+              <h2 class="heading wow fadeInUp">Mobile Apps Design &
+                Development</h2>
               <p class="txt wow fadeInUp">We offer solutions that bring consistency and stability to your business. </p>
             </div>
           </div>
@@ -348,7 +349,9 @@
                 <a class="btn-white" id="pills-web-tab" data-toggle="pill" href="#pills-web" role="tab"
                   aria-controls="pills-web" aria-selected="true">
                   <em data-magnetic>
-                    <span data-text="Website Design" class="wow fadeInUp">Website Design</span>
+                    <span data-text="Website Design &
+                    Development" class="wow fadeInUp">Website Design &
+                      Development</span>
                   </em>
                 </a>
               </li>
@@ -356,7 +359,9 @@
                 <a class="btn-white" id="pills-Apps-tab" data-toggle="pill" href="#pills-apps" role="tab"
                   aria-controls="pills-apps" aria-selected="true">
                   <em data-magnetic>
-                    <span data-text="Mobile Apps" class="wow fadeInUp">Mobile Apps</span>
+                    <span data-text="Mobile Apps Design &
+                    Development" class="wow fadeInUp">Mobile Apps Design &
+                      Development</span>
                   </em>
                 </a>
               </li>
@@ -940,7 +945,7 @@
             <h2 class="heading wow fadeInUp">Let’s Talk About Your Priorities</h2>
             <p class="wow txt fadeInUp">Join us today to talk about your business and requirements. We will always be
               ready to hear you out</p>
-            <form id="myForm">
+            <form id="contact-form" method="post">
               <div class="row">
                 <div class="col-md-6">
                   <div class="input-group">
@@ -971,7 +976,6 @@
                 </div>
               </div>
             </form>
-
           </div>
           <div class="row col-md-6 ">
             <div class="col-md-6">
@@ -983,11 +987,9 @@
             <div class="col-md-6">
               <h2 class="pt-4 heading wow fadeInUp">Jordan</h2>
               <p class="wow txt fadeInUp">Amman, Jordan </p>
-              <p class="wow txt fadeInUp"><a href="tel:+10000000000">+962788150123</a></p>
+              <p class="wow txt fadeInUp"><a href="tel:+962788150123">+962788150123</a></p>
               <p class="wow txt fadeInUp"><a href="mailto:jordanian708@yahoo.com">jordanian708@yahoo.com</a></p>
             </div>
-
-
           </div>
         </div>
       </div>
@@ -1050,7 +1052,7 @@
                 </div>
                 <div class="footer-menu mt-lg-4 mt-2">
                   <ul class="menu">
-                    <li><a href="tel:+10000000000">+1(708)248-0832
+                    <li><a href="tel:+1(708)248-0832">+1(708)248-0832
                       </a></li>
                     <li><a href="mailto:jordanian708@yahoo.com">
                         jordanian708@yahoo.com
@@ -1097,9 +1099,7 @@
                 <div class="footer-menu mt-lg-4 mt-2">
                   <ul class="menu">
 
-                    <li><a href="#"> +962788150123</a></li>
-                    <!-- <li><a href="#">  +962788150123</a></li> -->
-
+                    <li><a href="tel:+962788150123"> +962788150123</a></li>
                     <li><a href="#">
                         jordanian708@yahoo.com
                         </span></a></li>
@@ -1115,127 +1115,48 @@
   <div class="copyright">
     <p>Copyright © <span id="year"></span> ZeroOne Tech. All rights reserved.</p>
   </div>
-
-
-
+      <!-- Include Toastify JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="assets/js/mlib.js"></script>
   <script src="assets/js/function.js"></script>
-
   </div>
+  <script src=" https://smtpjs.com/v3/smtp.js"></script>
+      <script>
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+            sendEmail();
+        });
 
-  <!-- <script>
-
-    function sendEmail() {
-      const name = document.getElementById("name").value;
+        function sendEmail() {
+          const firstName = document.getElementById("name").value;
       const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value; // Corrected variable name
       const message = document.getElementById("message").value;
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", "send_email.php");
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          alert("Email sent successfully!");
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "syedfawadhome5@gmail.com",
+                Password: "DA225E72C9070EF957958152F37F78D3897B",
+                To: 'syedfawadhashmi5@gmail.com',
+                From: "syedfawadhome5@gmail.com",
+                Subject: subject,
+                Body: "Name: " + firstName + " " + phone + "<br/>Email: " + email + "<br/>Message: " + message
+            }).then(
+                message => showSuccessNotification()
+            );
         }
-      };
-      const data = "name=" + name + "&email=" + email + "&message=" + message;
-      xhr.send(data);
-    }
-  </script> -->
-  <!-- <script type="module">
-    const firebaseConfig = {
-
-      apiKey: "AIzaSyCuh5CWLcWWbZjyfDX0ESB4UK6TAbIVqr8",
-      authDomain: "zeroone-2509e.firebaseapp.com",
-      databaseURL: "https://zeroone-2509e-default-rtdb.firebaseio.com",
-      projectId: "zeroone-2509e",
-      storageBucket: "zeroone-2509e.appspot.com",
-      messagingSenderId: "716028132329",
-      appId: "1:716028132329:web:b76badafcccab1a138a978"
-
-    };
-    // initialize firebase
-    firebase.initializeApp(firebaseConfig);
-    ///////////////////
-
-    // Listen for form submit
-    document.getElementById('contactForm').addEventListener('submit', submitForm);
-    // reference your database
-    var contactFormDB = firebase.database().ref("contactForm");
-
-    function submitForm(e) {
-      e.preventDefault();
-
-      // Get values
-      var email = getElementVal('email');
-
-      // Save message
-      saveMessages(email);
-      console.log("email", email)
-      // Show alert
-      // document.querySelector('.alert').style.display = 'block';
-
-      // // Hide alert after 3 seconds
-      // setTimeout(function () {
-      //   document.querySelector('.alert').style.display = 'none';
-      // }, 3000);
-
-      // Clear form
-    }
-    // document.getElementById('contactForm').reset();
-    const getElementVal = (id) => {
-      return document.getElementById(id).value;
-    };
-    const saveMessages = (email) => {
-      var newContactForm = contactFormDB.push();
-      newContactForm.set({
-        email: email,
-
-      });
-    };
-
-  </script> -->
-
-<script src=" https://smtpjs.com/v3/smtp.js"></script>
-<script>
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent form submission
-        sendEmail();
-    });
-
-    function sendEmail() {
-        const firstName = document.getElementById("first-name").value;
-        const lastName = document.getElementById("last-name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
-
-        Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "sufyansiddiq44@gmail.com",
-            Password: "5D7AC8D13AA35A57A0DC0AF651690FA99A0A",
-            To: 'syedfawadhashmi5@gmail.com',
-            From: "sjawadcs@gmail.com",
-            Subject: subject,
-            Body: "Name: " + firstName + " " + lastName + "<br/>Email: " + email + "<br/>Message: " + message
-        }).then(
-            message => showSuccessNotification()
-        );
-    }
-    function showSuccessNotification() {
-        Toastify({
-            text: "Email sent successfully",
-            duration: 3000, // 3 seconds
-            close: true,
-            gravity: "bottom", // Display at the bottom
-            position: "right", // Display on the right
-            backgroundColor: "green",
-            stopOnFocus: true // Stop auto close on focus
-        }).showToast();
-    }
-</script>
-
-
-
+        function showSuccessNotification() {
+            Toastify({
+                text: "Email sent successfully",
+                duration: 3000, // 3 seconds
+                close: true,
+                gravity: "bottom", // Display at the bottom
+                position: "right", // Display on the right
+                backgroundColor: "green",
+                stopOnFocus: true // Stop auto close on focus
+            }).showToast();
+        }
+    </script>
   <script>
     // function sendEmail() {
 
@@ -1253,21 +1174,9 @@
     // }
 
   </script>
-
-
-
-
-
-
-
-
-
-
-
   <!-- Firebase SDK script tags -->
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-
   <script>
     // Your Firebase configuration
     const firebaseConfig = {
@@ -1313,10 +1222,6 @@
 
     });
   </script>
-
-
 </body>
-
-<!-- Mirrored from example.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jan 2023 12:00:25 GMT -->
 
 </html>
