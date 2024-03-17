@@ -1142,12 +1142,15 @@
             Host: "smtp.elasticemail.com",
             Username: "syedfawadhome5@gmail.com",
             Password: "DA225E72C9070EF957958152F37F78D3897B",
-            To: 'syedfawadhashmi5@gmail.com',
+            To: 'sjawadcs@gmail.com',
             From: "syedfawadhome5@gmail.com",
             Subject: "subject",
             Body: "Name: " + firstName + " " + "<br/>phone: " + phone + "<br/>Email: " + email + "<br/>Message: " + message
         }).then(
-            message => showSuccessNotification()
+          function(message) {
+                showSuccessNotification();
+                clearFormFields();
+            }
         );
     }
     function showSuccessNotification() {
@@ -1160,6 +1163,13 @@
             backgroundColor: "green",
             stopOnFocus: true // Stop auto close on focus
         }).showToast();
+    }
+    function clearFormFields() {
+        // Reset form fields to empty values
+        document.getElementById("first-name").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
     }
 </script>
   <script>

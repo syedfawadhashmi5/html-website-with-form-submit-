@@ -64,11 +64,10 @@
 
   <form id="contact-form" class="contact-form" method="post">
     <div class="row">
-      <div class="col-md-6">
-        <div class="input-group">
-          <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
+        <div class="col">
+            <input type="text" placeholder="Name" class="form-control" id="first-name"
+                name="first-name">
         </div>
-      </div>
         <div class="col">
             <input type="text" placeholder="phone" class="form-control" id="phone"
                 name="phone">
@@ -81,14 +80,10 @@
         </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
-        <div class="input-group">
-          <textarea name="message" id="message" class="form-control" placeholder="Message"></textarea>
+        <div class="col">
+            <textarea cols="30" rows="5" class="form-control" id="message" name="message"
+                placeholder="Message"></textarea>
         </div>
-      </div>
     </div>
-    <div class="button-container" data-magnetic data-cursor="-inverse">
-      <span class="mask">Get a quote</span>
-      <button class="button" type="submit" id="submit" name="submit">Get a quote</button>
-    </div>
+    <button class="button" type="submit" id="submit" name="submit">Send Message</button>
 </form>
