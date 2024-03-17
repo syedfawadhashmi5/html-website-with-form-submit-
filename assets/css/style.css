@@ -769,6 +769,7 @@ p {
   cursor: pointer;
   -webkit-animation: ani2 0.7s steps(70) forwards;
   animation: ani2 0.7s steps(70) forwards; */
+  color: white;
 }
 .button-container .btn-loop:hover {
   background: #000000;
